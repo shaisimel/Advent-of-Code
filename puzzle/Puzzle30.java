@@ -29,13 +29,13 @@ public class Puzzle30 {
 		map.remove(prevNumber);
 		
 		while(turn<TURN_LIMIT) {
-			turn++;
 			int nextNum = 0;
 			if(map.containsKey(prevNumber)) {
-				nextNum = turn - 1 - map.get(prevNumber);
+				nextNum = turn - map.get(prevNumber);
 			}
-			map.put(prevNumber, turn-1);
+			map.put(prevNumber, turn);
 			prevNumber = nextNum;
+			turn++;
 		}
 		
 		System.out.println(prevNumber);
