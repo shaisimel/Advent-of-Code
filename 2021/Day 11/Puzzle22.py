@@ -41,19 +41,13 @@ def __main():
                     if land[next_row][next_col] > 9:
                         flash_queue.append([next_row, next_col])
 
+        did_all_flash = True
         for r in range(rows):
             for c in range(cols):
                 if land[r][c] > 9:
                     land[r][c] = 0
-
-        did_all_flash = True
-        for r in range(rows):
-            for c in range(cols):
-                if land[r][c] > 0:
+                else:
                     did_all_flash = False
-                    break
-            if not did_all_flash:
-                break
 
     print(turns)
 
